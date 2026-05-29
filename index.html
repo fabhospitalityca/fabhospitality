@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fab Party and Event Rentals & Sales</title>
+<meta name="description" content="Fab Hospitality is your trusted partner for high-quality event and tent rentals, tailored to weddings, corporate events, festivals, backyard BBQs, and special celebrations in Burlington, Oakville, Hamilton, Grimsby, and Niagara Region.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --dark: #1a1a2e;
+    --dark2: #16213e;
+    --white: #ffffff;
+    --off-white: #f9f7f3;
+    --text: #333333;
+    --text-light: #666666;
+    --accent: #2e7d32;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+    background: var(--white);
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--dark);
+    color: var(--gold-light);
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .top-bar span { color: var(--gold); margin: 0 6px; }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .logo img { height: 70px; object-fit: contain; }
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+  .logo-text small {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+  .social-links { display: flex; gap: 10px; }
+  .social-links a {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .social-links a:hover { background: var(--gold); }
+  .header-contact { font-size: 14px; color: var(--text-light); }
+  .header-contact strong { color: var(--dark); }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--dark2);
+    border-top: 3px solid var(--gold);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: block;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  nav a:hover { color: var(--gold); background: rgba(255,255,255,0.05); }
+  .nav-item { position: relative; }
+  .nav-item:hover .dropdown { display: block; }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--dark);
+    min-width: 240px;
+    border-top: 2px solid var(--gold);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+  .dropdown a {
+    padding: 10px 18px;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .dropdown a:last-child { border-bottom: none; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--dark2) 0%, #0f3460 60%, #1a1a2e 100%);
+    color: var(--white);
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://fabhospitality.ca/wp-content/uploads/2025/04/Party-rent-1.jpg') center/cover no-repeat;
+    opacity: 0.18;
+  }
+  .hero-content { position: relative; max-width: 860px; margin: 0 auto; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 5vw, 48px);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+  .hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 3vw, 28px);
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+  }
+  .hero p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 32px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background: var(--gold);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    margin-left: 12px;
+  }
+  .btn-outline:hover { background: var(--gold); color: var(--dark); }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 70px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+  .section-title span { color: var(--gold); }
+  .section-subtitle {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    max-width: 640px;
+  }
+  .divider {
+    width: 60px; height: 3px;
+    background: var(--gold);
+    margin: 16px 0 36px;
+  }
+
+  /* ── WHY CHOOSE US ── */
+  .why { background: var(--off-white); }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+    margin-top: 16px;
+  }
+  .card {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 32px 28px;
+    border-bottom: 4px solid var(--gold);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+  .card-icon { font-size: 36px; margin-bottom: 16px; }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--dark);
+  }
+  .card p { font-size: 14px; line-height: 1.7; color: var(--text-light); }
+
+  /* ── GALLERY ── */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
+  }
+  .gallery-grid img:hover { transform: scale(1.03); opacity: 0.9; }
+
+  /* ── SERVICES ── */
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .service-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 24px;
+    background: var(--white);
+    border-radius: 4px;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .service-item .icon { font-size: 28px; flex-shrink: 0; }
+  .service-item h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .service-item p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+
+  /* ── COVERAGE AREA ── */
+  .coverage { background: var(--dark2); color: var(--white); }
+  .coverage .section-title { color: var(--white); }
+  .coverage .section-subtitle { color: rgba(255,255,255,0.7); }
+  .areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .area-tag {
+    background: rgba(201,168,76,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(90deg, var(--dark) 0%, #0f3460 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 24px;
+  }
+  .cta-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 36px);
+    margin-bottom: 12px;
+    color: var(--gold-light);
+  }
+  .cta-banner p { font-size: 17px; margin-bottom: 28px; color: rgba(255,255,255,0.85); }
+
+  /* ── HOURS + CONTACT ── */
+  .info-section { background: var(--off-white); }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    align-items: start;
+  }
+  .info-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--dark);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    font-size: 15px;
+  }
+  .hours-row .day { font-weight: 700; color: var(--dark); }
+  .hours-row .time { color: var(--text-light); }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    font-size: 15px;
+  }
+  .contact-item .icon { font-size: 20px; width: 28px; text-align: center; }
+  .contact-item a { color: var(--text); text-decoration: none; }
+  .contact-item a:hover { color: var(--gold); }
+  .map-wrapper iframe {
+    width: 100%;
+    height: 280px;
+    border: 0;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 14px;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  /* ── MOBILE NAV ── */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 26px;
+    cursor: pointer;
+    padding: 14px 16px;
+  }
+  @media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-links { display: none; flex-direction: column; width: 100%; }
+    .nav-links.open { display: flex; }
+    .nav-item { width: 100%; }
+    .dropdown { position: static; box-shadow: none; border-top: none; background: rgba(255,255,255,0.05); }
+    .dropdown a { padding-left: 32px; }
+    .header-inner { flex-wrap: wrap; }
+    .header-right { align-items: flex-start; }
+    .hero { padding: 50px 18px; }
+    .btn-outline { margin-left: 0; margin-top: 12px; display: block; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="top-bar">
+  🌱 Spring into Action:<span>Early Bird Specials</span>for your March &amp; April Events! 🌱
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <!-- Inline SVG logo placeholder – replace src with your logo image -->
+      <div class="logo-text">
+        Fab Hospitality
+        <small>Rentals &bull; Sales &bull; Services</small>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="social-links">
+        <a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank" title="Facebook">f</a>
+        <a href="https://twitter.com/fab_hospitality" target="_blank" title="Twitter">𝕏</a>
+        <a href="https://www.youtube.com/channel/UCsnvIa-AZ7nOY5T2l_3K6-Q" target="_blank" title="YouTube">▶</a>
+        <a href="https://www.instagram.com/fabhospitalityca/" target="_blank" title="Instagram">📷</a>
+      </div>
+      <div class="header-contact">
+        <strong>905-334-0091</strong> &nbsp;|&nbsp; <a href="mailto:sales@fabhospitality.ca">sales@fabhospitality.ca</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner" style="position:relative;">
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links" style="display:flex;flex-wrap:wrap;">
+      <div class="nav-item"><a href="#">Home</a></div>
+      <div class="nav-item">
+        <a href="#">Party &amp; Event Rental ▾</a>
+        <div class="dropdown">
+          <a href="#">Tents</a>
+          <a href="#">Cutlery / Flatware</a>
+          <a href="#">Dinnerware / Crockery</a>
+          <a href="#">Serving Ware</a>
+          <a href="#">Glassware</a>
+          <a href="#">Chairs</a>
+          <a href="#">Tables</a>
+          <a href="#">Heaters</a>
+          <a href="#">Linen / Table Cloths</a>
+          <a href="#">Dance Floor</a>
+          <a href="#">Portable Bar</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">Event &amp; Party Items for Sale ▾</a>
+        <div class="dropdown">
+          <a href="#">Tents for Sale</a>
+          <a href="#">Event Chairs for Sale</a>
+          <a href="#">Tables for Sale</a>
+          <a href="#">Setup &amp; Decor Items</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#">Wedding Package</a></div>
+      <div class="nav-item">
+        <a href="#">Our Services ▾</a>
+        <div class="dropdown">
+          <a href="#">Setup and Take Down</a>
+          <a href="#">Delivery &amp; Pickup Services</a>
+          <a href="#">Free Site Visit &amp; Consultation</a>
+          <a href="#">Hamilton Party Rental</a>
+          <a href="#">Burlington – Wedding Tents &amp; Party Rentals</a>
+          <a href="#">Grimsby – Table &amp; Chair Rentals</a>
+          <a href="#">Oakville – Event Rentals</a>
+          <a href="#">Niagara Falls – Party &amp; Wedding Rentals</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="#">Blog</a></div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Your Leading Event Rental Provider in Burlington, Oakville, Hamilton, Stoney Creek, Grimsby, Lincoln, and Niagara Region</h1>
+    <h2>Welcome to Fab Hospitality Tent Rentals and Sales</h2>
+    <p>Fab Hospitality is your trusted partner for high-quality event and tent rentals, tailored to weddings, corporate events, festivals, backyard BBQs, and special celebrations. We offer an extensive range of rentals, including tents, tables, chairs, linens, dinnerware, and décor to create memorable and elegant event spaces.</p>
+    <a href="mailto:sales@fabhospitality.ca" class="btn">Get a Free Quote</a>
+    <a href="tel:9053340091" class="btn btn-outline">Call 905-334-0091</a>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+  <div class="section-inner">
+    <div class="section-title">Why Choose <span>Fab Hospitality?</span></div>
+    <div class="divider"></div>
+    <p class="section-subtitle">Our dedicated team collaborates closely with clients to understand each event's unique vision and requirements — from planning to setup.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🏕️</div>
+        <h3>Party Tent Rentals</h3>
+        <p>For backyard events, weddings, and outdoor celebrations. Choose from a variety of premium tents in multiple sizes and styles to suit any guest count and aesthetic.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🪑</div>
+        <h3>Table &amp; Chair Rentals</h3>
+        <p>Folding chairs, banquet tables, cocktail tables &amp; more. High-quality options in a range of designs and materials to match your event's style.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✨</div>
+        <h3>Event Accessories</h3>
+        <p>Linens, tablecloths, heaters, lighting, and serving items. Stylish décor and accessories including linens, lighting, tableware, and more.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💍</div>
+        <h3>Wedding Rentals</h3>
+        <p>Elegant setups for ceremonies and receptions. We make your dream wedding vision a reality with beautiful, seamless service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section>
+  <div class="section-inner">
+    <div class="section-title">Our <span>Gallery</span></div>
+    <div class="divider"></div>
+    <p class="section-subtitle">From the tent over your head to the flooring beneath your feet — and everything in between — we've got you covered!</p>
+    <div class="gallery-grid">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/Party-rent-1.jpg" alt="Party Rental Setup" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/44668803ddbdc97daa8ccea54ff26fa3-851x1024.jpg" alt="Event Tent" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2017/06/Winery-tents.jpg" alt="Winery Tent" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/images-4.jpg" alt="Event Setup" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/p7.jpg" alt="Party Rental" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/Clear-marquee-interior-with-white-ends-and-white-linen-Copy-e1739924516984-r1pmbuqhnfffdacjz8u0ai7f0tualu2rd15vm7niys.webp" alt="Marquee Interior" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/Marquee-3.jpg" alt="Marquee Tent" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/Dance-floor1.jpg" alt="Dance Floor" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/10m-mixed-roof3-w-1024x768.jpg" alt="Mixed Roof Tent" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/wedding-3-1024x788.jpeg" alt="Wedding Setup" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/tent-rentals_800x-2.webp" alt="Tent Rentals" loading="lazy">
+      <img src="https://fabhospitality.ca/wp-content/uploads/2025/04/811Z-nXNMML.jpg" alt="Event Chairs" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="background:var(--off-white);">
+  <div class="section-inner">
+    <div class="section-title">Our <span>Services</span></div>
+    <div class="divider"></div>
+    <div class="services-list">
+      <div class="service-item">
+        <div class="icon">✨</div>
+        <div>
+          <h3>Corporate Events Rentals</h3>
+          <p>Professional setups that make an impression at every corporate function.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="icon">💍</div>
+        <div>
+          <h3>Weddings Rentals</h3>
+          <p>Elegant tents, chairs, linens, and décor for your perfect wedding day.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="icon">🎪</div>
+        <div>
+          <h3>Festivals Rentals</h3>
+          <p>Large-scale tent and equipment rentals for festivals and community events.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="icon">🎓</div>
+        <div>
+          <h3>Graduation Rentals</h3>
+          <p>Celebrate milestones with beautiful outdoor setups for graduation parties.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="icon">🎉</div>
+        <div>
+          <h3>Private Parties &amp; Grand Celebrations</h3>
+          <p>From backyard BBQs to grand galas — we have everything you need.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="icon">🚛</div>
+        <div>
+          <h3>Delivery &amp; Pickup Services</h3>
+          <p>Hassle-free delivery, setup, and pickup so you can focus on your event.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE AREA -->
+<section class="coverage">
+  <div class="section-inner">
+    <div class="section-title">📍 Serving These <span>Locations</span> &amp; Beyond</div>
+    <div class="divider"></div>
+    <p class="section-subtitle">Proudly serving the Hamilton, Niagara, and GTA regions with fast delivery and professional setup.</p>
+    <div class="areas">
+      <div class="area-tag">Outdoor Party Rentals Near Me</div>
+      <div class="area-tag">Party Rentals St. Catharines</div>
+      <div class="area-tag">Party Rentals Burlington</div>
+      <div class="area-tag">Party Rentals Hamilton</div>
+      <div class="area-tag">Beamsville</div>
+      <div class="area-tag">Lincoln</div>
+      <div class="area-tag">Ancaster</div>
+      <div class="area-tag">Grimsby</div>
+      <div class="area-tag">GTA</div>
+      <div class="area-tag">Party Rentals Niagara</div>
+      <div class="area-tag">Oakville</div>
+      <div class="area-tag">Stoney Creek</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Ready to Start Planning?</h2>
+  <p>Contact Fab Hospitality today to make your event a cherished experience!</p>
+  <a href="mailto:sales@fabhospitality.ca" class="btn">Email Us Today</a>
+  <a href="tel:9053340091" class="btn btn-outline" style="margin-left:12px;">905-334-0091</a>
+</div>
+
+<!-- HOURS + CONTACT + MAP -->
+<section class="info-section">
+  <div class="section-inner">
+    <div class="info-grid">
+
+      <div class="info-box">
+        <h3>🕐 Hours of Operation</h3>
+        <div class="hours-row"><span class="day">Monday</span><span class="time">8:00 am – 4:00 pm</span></div>
+        <div class="hours-row"><span class="day">Tuesday</span><span class="time">8:00 am – 4:00 pm</span></div>
+        <div class="hours-row"><span class="day">Wednesday</span><span class="time">8:00 am – 4:00 pm</span></div>
+        <div class="hours-row"><span class="day">Thursday</span><span class="time">8:00 am – 4:00 pm</span></div>
+        <div class="hours-row"><span class="day">Friday</span><span class="time">8:00 am – 4:00 pm</span></div>
+        <div class="hours-row"><span class="day">Saturday</span><span class="time">Closed</span></div>
+        <div class="hours-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+      </div>
+
+      <div class="info-box">
+        <h3>📞 Contact Information</h3>
+        <div class="contact-item">
+          <span class="icon">📱</span>
+          <div><strong>Phone</strong><br><a href="tel:9053340091">905-334-0091</a></div>
+        </div>
+        <div class="contact-item">
+          <span class="icon">✉️</span>
+          <div><strong>Email</strong><br><a href="mailto:sales@fabhospitality.ca">sales@fabhospitality.ca</a></div>
+        </div>
+        <div class="contact-item">
+          <span class="icon">📘</span>
+          <div><strong>Facebook</strong><br><a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank">FABHOSPITALITYCANADA</a></div>
+        </div>
+        <div class="contact-item">
+          <span class="icon">📸</span>
+          <div><strong>Instagram</strong><br><a href="https://www.instagram.com/fabhospitalityca/" target="_blank">@fabhospitalityca</a></div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h3>📍 Visit Fab Hospitality</h3>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.1909700782385!2d-79.7020048491923!3d43.22645557903588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ca3936fc3657d%3A0x42fd3ad6764cab0e!2sFab%20Hospitality%20Party%2C%20Events%2C%20Tent%20%26%20Entertainment%20Rentals!5e0!3m2!1sen!2sca!4v1678758053180!5m2!1sen!2sca"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Fab Hospitality</div>
+  <p>Fab Hospitality © 2024 &nbsp;|&nbsp; Party, Events, Tent &amp; Entertainment Rentals</p>
+  <p style="margin-top:6px;">
+    <a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank">Facebook</a> &nbsp;•&nbsp;
+    <a href="https://twitter.com/fab_hospitality" target="_blank">Twitter</a> &nbsp;•&nbsp;
+    <a href="https://www.instagram.com/fabhospitalityca/" target="_blank">Instagram</a> &nbsp;•&nbsp;
+    <a href="https://www.youtube.com/channel/UCsnvIa-AZ7nOY5T2l_3K6-Q" target="_blank">YouTube</a>
+  </p>
+</footer>
+
+<script>
+  // Mobile nav toggle for dropdown submenus
+  document.querySelectorAll('.nav-item > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const dropdown = this.nextElementSibling;
+      if (dropdown && window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      }
+    });
+  });
+</script>
+</body>
+</html>
