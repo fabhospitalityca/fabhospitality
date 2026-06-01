@@ -10,24 +10,32 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="top-bar">🌱 Spring into Action: <span>Early Bird Specials</span> for your March & April Events! 🌱 &nbsp;|&nbsp; <span>RENTALS & SALES</span> — We Rent AND Sell Tents, Chairs, Tables & More!</div>
+<div class="sell-banner">
+  🏕️ <strong>NOW SELLING</strong> — Event Tents, Tables, Chairs &amp; Equipment! &nbsp;|&nbsp; <a href="sales.html">Shop Sale Items →</a> &nbsp;|&nbsp; 📞 <a href="tel:9053340091">905-334-0091</a>
+</div>
 <header>
   <div class="header-inner">
-    <a href="index.html" class="logo-text">Fab Hospitality<small>Rentals &bull; Sales &bull; Services</small></a>
+    <a href="index.html" class="logo-text">
+      Fab Hospitality
+      <small>We Sell &bull; We Rent &bull; We Deliver</small>
+    </a>
     <div class="header-right">
       <div class="social-links">
-        <a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank">f</a>
-        <a href="https://twitter.com/fab_hospitality" target="_blank">𝕏</a>
-        <a href="https://www.youtube.com/channel/UCsnvIa-AZ7nOY5T2l_3K6-Q" target="_blank">▶</a>
-        <a href="https://www.instagram.com/fabhospitalityca/" target="_blank">📷</a>
+        <a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank" title="Facebook">f</a>
+        <a href="https://twitter.com/fab_hospitality" target="_blank" title="Twitter">𝕏</a>
+        <a href="https://www.youtube.com/channel/UCsnvIa-AZ7nOY5T2l_3K6-Q" target="_blank" title="YouTube">▶</a>
+        <a href="https://www.instagram.com/fabhospitalityca/" target="_blank" title="Instagram">📷</a>
       </div>
-      <div class="header-contact"><a href="tel:9053340091">905-334-0091</a> &nbsp;|&nbsp; <a href="mailto:sales@fabhospitality.ca">sales@fabhospitality.ca</a></div>
+      <div class="header-contact">
+        <a href="tel:9053340091">905-334-0091</a> &nbsp;|&nbsp;
+        <a href="mailto:sales@fabhospitality.ca">sales@fabhospitality.ca</a>
+      </div>
     </div>
   </div>
 </header>
 <nav>
   <div class="nav-inner">
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <button class="menu-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">☰</button>
     <div class="nav-links">
       <div class="nav-item"><a href="index.html">Home</a></div>
       <div class="nav-item">
@@ -47,17 +55,9 @@
         </div>
       </div>
       <div class="nav-item">
-        <a href="sales.html">Event &amp; Party Items for Sale ▾</a>
+        <a href="sales.html">Items for Sale ▾</a>
         <div class="dropdown">
-          <div class="has-sub">
-            <a href="tents-sale.html">Tents for Sale</a>
-            <div class="sub-dropdown">
-              <a href="tent-10x20.html">10×20 Tent</a>
-              <a href="tent-20x20.html">20×20 Tent</a>
-              <a href="tent-20x30.html">20×30 Tent</a>
-              <a href="tent-20x40.html">20×40 Tent</a>
-            </div>
-          </div>
+          <a href="tents-sale.html">Tents for Sale</a>
           <a href="chairs-sale.html">Event Chairs for Sale</a>
           <a href="tables-sale.html">Tables for Sale</a>
           <a href="decor-items.html">Setup &amp; Decor Items</a>
@@ -68,7 +68,7 @@
         <a href="services.html">Our Services ▾</a>
         <div class="dropdown">
           <a href="setup-takedown.html">Setup and Take Down</a>
-          <a href="delivery.html">Delivery &amp; Pickup Services</a>
+          <a href="delivery.html">Delivery &amp; Pickup</a>
           <a href="consultation.html">Free Site Visit &amp; Consultation</a>
           <a href="service-areas.html">Event Rentals Near Me</a>
         </div>
@@ -158,11 +158,10 @@
 <script>
 document.querySelectorAll('.nav-item > a').forEach(link => {
   link.addEventListener('click', function(e) {
-    const dropdown = this.nextElementSibling;
-    if (dropdown && window.innerWidth <= 768) { e.preventDefault(); dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'; }
+    const dd = this.nextElementSibling;
+    if (dd && window.innerWidth <= 900) { e.preventDefault(); dd.style.display = dd.style.display === 'block' ? 'none' : 'block'; }
   });
 });
-// highlight active page
 document.querySelectorAll('nav a').forEach(a => { if(a.href === window.location.href) a.classList.add('active'); });
 </script>
 </body></html>

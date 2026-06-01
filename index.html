@@ -35,8 +35,8 @@
 </header>
 <nav>
   <div class="nav-inner">
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <div class="nav-links" style="display:flex;flex-direction:row;">
+    <button class="menu-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
       <div class="nav-item"><a href="index.html">Home</a></div>
       <div class="nav-item">
         <a href="rentals.html">Party &amp; Event Rental ▾</a>

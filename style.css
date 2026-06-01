@@ -149,6 +149,9 @@ footer a { color: var(--gold); text-decoration: none; }
 .tip-box { background: var(--gold); color: var(--dark); padding: 16px 28px; border-radius: 4px; margin-bottom: 40px; font-weight: 700; font-size: 15px; }
 .tip-box a { color: var(--dark); text-decoration: underline; }
 
+/* NAV LINKS DEFAULT HORIZONTAL */
+.nav-links { display: flex; flex-direction: row; flex-wrap: nowrap; }
+
 /* MOBILE */
 @media (max-width: 900px) {
   .menu-toggle { display: block; }
