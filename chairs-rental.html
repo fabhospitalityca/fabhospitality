@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chair Rentals – Folding, Wedding White & Resin Padded | Fab Hospitality</title>
-<meta name="description" content="Rent folding chairs from $1.95, wedding white chairs at $2.50, resin padded chairs at $3.99. Burlington, Hamilton, Niagara.">
+<title>Chair Rentals – Folding, Wedding White, Resin Padded & Bar Stools | Fab Hospitality</title>
+<meta name="description" content="Rent folding chairs from $1.95, wedding white chairs at $2.50, resin padded chairs at $3.99, folding bar stools at $10.95. Burlington, Hamilton, Niagara.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -35,8 +35,8 @@
 </header>
 <nav>
   <div class="nav-inner">
-    <button class="menu-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <div class="nav-links">
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links" style="display:flex;flex-direction:row;">
       <div class="nav-item"><a href="index.html">Home</a></div>
       <div class="nav-item">
         <a href="rentals.html">Party &amp; Event Rental ▾</a>
@@ -81,24 +81,27 @@
 <div class="page-hero">
   <div class="breadcrumb"><a href="index.html">Home</a> › <a href="rentals.html">Rentals</a> › Chair Rentals</div>
   <h1>Chair Rentals</h1>
-  <p>We carry a wide selection of rental chairs for any event type and budget. Delivery available throughout Burlington, Hamilton, Oakville, Grimsby, Niagara and the GTA.</p>
+  <p>We carry a wide selection of rental chairs for any event type and budget — from standard folding chairs to elegant resin padded chairs and bar stools. Delivery available throughout Burlington, Hamilton, Oakville, Grimsby, Niagara and the GTA.</p>
 </div>
+
 <section>
   <div class="section-inner">
     <div class="tip-box">💡 We also <strong>SELL chairs!</strong> Plastic Folding from $24.99 &nbsp;•&nbsp; Resin from $34.95 &nbsp;•&nbsp; Chiavari at $75 CAD. <a href="chairs-sale.html">View Chairs for Sale →</a></div>
     <div class="section-title">Chair <span>Rental Options &amp; Prices</span></div>
     <div class="divider"></div>
+    <p class="section-subtitle">All chair rentals include delivery and pickup. Contact us for availability and bulk pricing.</p>
+
     <div class="product-grid">
 
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=600&q=80" alt="Standard Folding Chair" loading="lazy">
+        <img src="images/Standard_Folding_chair.png" alt="Standard Folding Chair Rental $1.95" loading="lazy">
         <div class="product-body">
           <span class="badge badge-gold">For Rent</span>
           <h3>Standard Folding Chair</h3>
           <div class="price">$1.95 each</div>
-          <p>Classic lightweight folding chairs — durable and available in large quantities. Perfect for any casual or corporate event.</p>
+          <p>Classic folding chairs with padded back and seat — durable, comfortable and available in large quantities. Perfect for any casual or corporate event.</p>
           <ul class="features" style="margin-bottom:16px;">
-            <li>Lightweight &amp; easy to arrange</li>
+            <li>Padded back &amp; seat for comfort</li>
             <li>Available in large quantities</li>
             <li>Suitable for indoor &amp; outdoor use</li>
             <li>Great for corporate &amp; casual events</li>
@@ -108,14 +111,14 @@
       </div>
 
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80" alt="Wedding White Chair" loading="lazy">
+        <img src="images/Wedding_White_Chair.jpg" alt="Wedding White Chair Rental $2.50" loading="lazy">
         <div class="product-body">
           <span class="badge badge-gold">For Rent</span>
           <h3>Wedding White Chair</h3>
           <div class="price">$2.50 each</div>
-          <p>Beautiful white folding chairs — the popular choice for weddings, bridal showers, baptisms and elegant outdoor events.</p>
+          <p>Beautiful all-white folding chairs — the popular choice for weddings, bridal showers, baptisms and elegant outdoor events. Clean, classic look.</p>
           <ul class="features" style="margin-bottom:16px;">
-            <li>Elegant white finish</li>
+            <li>Elegant all-white finish</li>
             <li>Perfect for weddings &amp; ceremonies</li>
             <li>Lightweight &amp; stackable</li>
             <li>Great for outdoor settings</li>
@@ -125,15 +128,15 @@
       </div>
 
       <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Resin Padded Chair" loading="lazy">
+        <img src="images/WPC.jpg" alt="White Resin Padded Chair Rental $3.99" loading="lazy">
         <div class="product-body">
           <span class="badge badge-gold">For Rent</span>
-          <h3>Resin Padded Chair</h3>
+          <h3>White Resin Padded Chair</h3>
           <div class="price">$3.99 each</div>
-          <p>Premium resin chairs with padded seating — comfortable and stylish for longer events like wedding receptions, galas and formal dinners.</p>
+          <p>Premium white resin folding chair with padded seat — comfortable and stylish for longer events like wedding receptions, galas and formal dinners.</p>
           <ul class="features" style="margin-bottom:16px;">
             <li>Padded seat for extra comfort</li>
-            <li>Elegant resin construction</li>
+            <li>Elegant white resin construction</li>
             <li>Ideal for long seated events</li>
             <li>Great for upscale occasions</li>
           </ul>
@@ -141,21 +144,41 @@
         </div>
       </div>
 
+      <div class="product-card">
+        <img src="images/Bar_Stool.png" alt="Folding High Bar Stool Rental $10.95" loading="lazy">
+        <div class="product-body">
+          <span class="badge badge-gold">For Rent</span>
+          <h3>Folding High Bar Stool</h3>
+          <div class="price">$10.95 each</div>
+          <p>Sturdy folding bar stools perfect for cocktail tables, portable bars and high-top setups. Ideal for cocktail hours, networking events and casual gatherings.</p>
+          <ul class="features" style="margin-bottom:16px;">
+            <li>Bar height — 41.1" tall</li>
+            <li>Foldable for easy transport</li>
+            <li>Footrest for added comfort</li>
+            <li>Great with cocktail tables &amp; portable bars</li>
+          </ul>
+          <a href="contact.html" class="btn">Book Now</a>
+        </div>
+      </div>
+
     </div>
+
     <div style="background:var(--off-white);padding:32px;border-radius:6px;margin-top:48px;text-align:center;">
       <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:12px;">Need chairs + tables + tent?</h3>
-      <p style="margin-bottom:20px;color:var(--text-light);">We can package everything together. Contact us for a custom event quote!</p>
+      <p style="margin-bottom:20px;color:var(--text-light);">We can package everything together — tent, tables, chairs, linens and more. Contact us for a custom event quote and save!</p>
       <a href="contact.html" class="btn">Get a Package Quote</a>
       <a href="rentals.html" class="btn btn-outline" style="margin-left:12px;">Browse All Rentals</a>
     </div>
   </div>
 </section>
+
 <div class="cta-banner">
-  <h2>Ready to Rent or Buy?</h2>
-  <p>Contact Fab Hospitality — we rent AND sell tents, chairs, tables, linens &amp; more!</p>
+  <h2>Ready to Book Chairs?</h2>
+  <p>Contact Fab Hospitality — we rent AND sell chairs for any event size and budget!</p>
   <a href="contact.html" class="btn">Get a Free Quote</a>
   <a href="tel:9053340091" class="btn btn-outline" style="margin-left:12px;">Call 905-334-0091</a>
 </div>
+
 <section class="coverage">
   <div class="section-inner">
     <div class="section-title">📍 Serving <span>These Areas</span></div>
@@ -169,6 +192,7 @@
     </div>
   </div>
 </section>
+
 <section class="info-section">
   <div class="section-inner">
     <div class="info-grid">
@@ -191,9 +215,10 @@
     </div>
   </div>
 </section>
+
 <footer>
   <div class="footer-logo">Fab Hospitality</div>
-  <p>© 2024 Fab Hospitality &nbsp;|&nbsp; High Peak Marquee Tent Rentals &amp; Sales | Party &amp; Event Equipment</p>
+  <p>© 2024 Fab Hospitality &nbsp;|&nbsp; Party &amp; Event Rentals &amp; Sales | Burlington, Hamilton, Niagara</p>
   <p style="margin-top:6px;">
     <a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank">Facebook</a> &nbsp;•&nbsp;
     <a href="https://www.instagram.com/fabhospitalityca/" target="_blank">Instagram</a> &nbsp;•&nbsp;
@@ -204,9 +229,9 @@
 document.querySelectorAll('.nav-item > a').forEach(link => {
   link.addEventListener('click', function(e) {
     const dd = this.nextElementSibling;
-    if (dd && window.innerWidth <= 900) { e.preventDefault(); dd.style.display = dd.style.display === 'block' ? 'none' : 'block'; }
+    if (dd && window.innerWidth <= 900) { e.preventDefault(); dd.style.display = dd.style.display==='block'?'none':'block'; }
   });
 });
-document.querySelectorAll('nav a').forEach(a => { if(a.href === window.location.href) a.classList.add('active'); });
+document.querySelectorAll('nav a').forEach(a => { if(a.href===window.location.href) a.classList.add('active'); });
 </script>
 </body></html>
