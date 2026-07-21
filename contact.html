@@ -1,292 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>if(window.location.protocol==='http:'){window.location.replace('https://'+window.location.host+window.location.pathname+window.location.search);}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Fab Hospitality – Two Locations: Beamsville & Stoney Creek | Tent Rentals & Sales</title>
-<meta name="description" content="Contact Fab Hospitality for tent, chair, table and event equipment rentals and sales. Two locations: Beamsville (Niagara) and Stoney Creek (Hamilton). Call 905-334-0091.">
-  <link rel="canonical" href="https://fabhospitality.ca/contact.html">
+<title>Contact Fab Hospitality – Free Quote | Tent Rentals & Sales</title>
+<meta name="description" content="Contact Fab Hospitality for tent, chair, table and event equipment rentals and sales. Two locations: Beamsville and Stoney Creek. Call 905-334-0091.">
+<link rel="canonical" href="https://fabhospitality.ca/contact.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>if(window.location.protocol==='http:'){window.location.replace('https://'+window.location.host+window.location.pathname);}</script>
 <style>
-.location-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-top: 8px;
+.contact-form-section { background: var(--off-white); padding: 50px 24px; }
+.form-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 40px;
+  max-width: 860px;
+  margin: 0 auto;
 }
-.loc-card {
-  background: var(--white);
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  border-top: 5px solid var(--gold);
+.form-card h2 { font-family:'Playfair Display',serif; font-size:28px; color:var(--dark); margin-bottom:6px; }
+.form-card h2 span { color:var(--gold); }
+.form-divider { width:50px; height:3px; background:var(--gold); margin:12px 0 20px; }
+.form-card p { font-size:15px; color:var(--text-light); margin-bottom:28px; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.form-group { display:flex; flex-direction:column; gap:6px; }
+.form-group.full { grid-column:1/-1; }
+.form-label { font-size:13px; font-weight:700; color:var(--dark); }
+.form-input, .form-select, .form-textarea {
+  padding:13px 16px;
+  border:1.5px solid rgba(0,0,0,0.12);
+  border-radius:8px;
+  font-size:15px;
+  font-family:'Lato',sans-serif;
+  color:var(--dark);
+  background:white;
+  transition:border-color 0.2s;
+  -webkit-appearance:none;
 }
-.loc-card-header {
-  background: var(--dark2);
-  color: var(--white);
-  padding: 20px 24px;
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline:none;
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(201,168,76,0.15);
 }
-.loc-card-header h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  margin-bottom: 4px;
-  color: var(--white);
+.form-textarea { height:130px; resize:vertical; }
+.submit-btn {
+  width:100%;
+  padding:17px;
+  background:var(--gold);
+  color:var(--dark);
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  font-family:'Lato',sans-serif;
+  margin-top:8px;
+  transition:background 0.2s, transform 0.15s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
 }
-.loc-card-header p {
-  font-size: 13px;
-  color: var(--gold-light);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.submit-btn:hover { background:var(--gold-light); transform:translateY(-1px); }
+.submit-btn:disabled { opacity:0.6; cursor:not-allowed; transform:none; }
+.success-banner {
+  display:none;
+  background:#d4edda;
+  border:1px solid #c3e6cb;
+  color:#155724;
+  padding:20px 24px;
+  border-radius:8px;
+  margin-top:20px;
+  font-size:15px;
+  font-weight:700;
+  text-align:center;
 }
-.loc-card-body { padding: 24px; }
-.loc-detail {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
-  font-size: 15px;
+.error-banner {
+  display:none;
+  background:#f8d7da;
+  border:1px solid #f5c6cb;
+  color:#721c24;
+  padding:16px 24px;
+  border-radius:8px;
+  margin-top:20px;
+  font-size:14px;
 }
-.loc-detail:last-child { border-bottom: none; }
-.loc-detail .icon { font-size: 18px; width: 26px; flex-shrink: 0; }
-.loc-detail a { color: var(--text); text-decoration: none; }
-.loc-detail a:hover { color: var(--gold); }
-@media (max-width: 768px) {
-  .location-hero { grid-template-columns: 1fr; }
+.or-divider { display:flex; align-items:center; gap:16px; margin:20px 0; }
+.or-divider::before, .or-divider::after { content:''; flex:1; height:1px; background:rgba(0,0,0,0.1); }
+.or-divider span { font-size:13px; color:var(--text-light); }
+.call-btn {
+  display:block;
+  width:100%;
+  padding:15px;
+  background:var(--dark);
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:700;
+  text-align:center;
+  text-decoration:none;
+  font-family:'Lato',sans-serif;
+}
+/* LOCATION CARDS */
+.location-hero { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:8px; }
+.loc-card { background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.08); border-top:4px solid var(--gold); }
+.loc-card-head { background:var(--dark2); padding:16px 20px; }
+.loc-card-head h3 { color:var(--gold); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; }
+.loc-card-head p { color:white; font-size:15px; font-weight:700; margin-top:4px; }
+.contact-row { display:flex; align-items:center; gap:14px; padding:13px 20px; border-bottom:1px solid rgba(0,0,0,0.06); text-decoration:none; color:var(--text); }
+.contact-row:last-child { border-bottom:none; }
+.contact-row .c-icon { font-size:20px; width:28px; text-align:center; flex-shrink:0; }
+.contact-row .c-label { font-size:11px; color:var(--text-light); text-transform:uppercase; letter-spacing:0.5px; font-weight:700; }
+.contact-row .c-val { font-size:15px; color:var(--dark); font-weight:700; margin-top:1px; }
+.contact-row:hover .c-val { color:var(--gold); }
+@media (max-width:768px) {
+  .form-grid { grid-template-columns:1fr; }
+  .location-hero { grid-template-columns:1fr; }
+  .form-card { padding:24px 20px; }
 }
 </style>
 </head>
 <body>
-<div class="sell-banner">
-  🏕️ <strong>NOW SELLING</strong> — Event Tents, Tables, Chairs &amp; Equipment! &nbsp;|&nbsp; <a href="sales.html">Shop Sale Items →</a> &nbsp;|&nbsp; 📞 <a href="tel:9053340091">905-334-0091</a>
-</div>
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo-text">
-      Fab Hospitality
-      <small>We Sell &bull; We Rent &bull; We Deliver</small>
-    </a>
-    <div class="header-right">
-      <div class="social-links">
-        <a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank" title="Facebook">f</a>
-        <a href="https://twitter.com/fab_hospitality" target="_blank" title="Twitter">𝕏</a>
-        <a href="https://www.youtube.com/channel/UCsnvIa-AZ7nOY5T2l_3K6-Q" target="_blank" title="YouTube">▶</a>
-        <a href="https://www.instagram.com/fabhospitalityca/" target="_blank" title="Instagram">📷</a>
-      </div>
-      <div class="header-contact">
-        <a href="tel:9053340091">905-334-0091</a> &nbsp;|&nbsp;
-        <a href="mailto:sales@fabhospitality.ca">sales@fabhospitality.ca</a>
-      </div>
-    </div>
-  </div>
-</header>
-<nav>
-  <div class="nav-inner">
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <div class="nav-links" style="display:flex;flex-direction:row;">
-      <div class="nav-item"><a href="index.html">Home</a></div>
-      <div class="nav-item">
-        <a href="rentals.html">Party &amp; Event Rental ▾</a>
-        <div class="dropdown">
-          <a href="tents-rental.html">Tents</a>
-          <a href="cutlery.html">Cutlery / Flatware</a>
-          <a href="dinnerware.html">Dinnerware / Crockery</a>
-          <a href="serving-ware.html">Serving Ware</a>
-          <a href="glassware.html">Glassware</a>
-          <a href="chairs-rental.html">Chairs</a>
-          <a href="tables-rental.html">Tables</a>
-          <a href="heaters.html">Heaters</a>
-          <a href="linen.html">Linen / Table Cloths</a>
-          <a href="dance-floor.html">Dance Floor</a>
-          <a href="portable-bar.html">Portable Bar</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="sales.html">Items for Sale ▾</a>
-        <div class="dropdown">
-          <a href="tents-sale.html">Tents for Sale</a>
-          <a href="chairs-sale.html">Event Chairs for Sale</a>
-          <a href="tables-sale.html">Tables for Sale</a>
-          <a href="decor-items.html">Setup &amp; Decor Items</a>
-        </div>
-      </div>
-      <div class="nav-item"><a href="wedding.html">Wedding Package</a></div>
-      <div class="nav-item">
-        <a href="services.html">Our Services ▾</a>
-        <div class="dropdown">
-          <a href="setup-takedown.html">Setup and Take Down</a>
-          <a href="delivery.html">Delivery &amp; Pickup</a>
-          <a href="consultation.html">Free Site Visit &amp; Consultation</a>
-          <a href="service-areas.html">Event Rentals Near Me</a>
-        </div>
-      </div>
-      <div class="nav-item"><a href="contact.html">Contact</a></div>
-    </div>
-  </div>
-</nav>
+<div class="sell-banner">🏕️ <strong>NOW SELLING</strong> — Tents, Tables, Chairs &amp; Equipment! &nbsp;|&nbsp; <a href="sales.html">Shop →</a> &nbsp;|&nbsp; 📞 <a href="tel:9053340091">905-334-0091</a></div>
+<header><div class="header-inner"><a href="index.html" class="logo-text">Fab Hospitality<small>We Sell &bull; We Rent &bull; We Deliver</small></a><div class="header-right"><div class="header-contact"><a href="tel:9053340091">905-334-0091</a> &nbsp;|&nbsp; <a href="mailto:sales@fabhospitality.ca">sales@fabhospitality.ca</a></div></div></div></header>
+<nav><div class="nav-inner"><button class="menu-toggle" onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">☰</button><div class="nav-links"><div class="nav-item"><a href="index.html">Home</a></div><div class="nav-item"><a href="rentals.html">Party &amp; Event Rental ▾</a><div class="dropdown"><a href="tents-rental.html">Tents</a><a href="chairs-rental.html">Chairs</a><a href="tables-rental.html">Tables</a><a href="dance-floor.html">Dance Floor</a><a href="linen.html">Linen</a><a href="glassware.html">Glassware</a><a href="heaters.html">Heaters</a><a href="portable-bar.html">Portable Bar</a></div></div><div class="nav-item"><a href="sales.html">Items for Sale ▾</a><div class="dropdown"><a href="tents-sale.html">Tents for Sale</a><a href="chairs-sale.html">Chairs for Sale</a><a href="tables-sale.html">Tables for Sale</a></div></div><div class="nav-item"><a href="wedding.html">Wedding Package</a></div><div class="nav-item"><a href="services.html">Our Services</a></div><div class="nav-item"><a href="reviews.html">Reviews</a></div><div class="nav-item"><a href="contact.html" class="active">Contact</a></div></div></div></nav>
 
 <div class="page-hero">
   <div class="breadcrumb"><a href="index.html">Home</a> › Contact</div>
   <h1>Contact Fab Hospitality</h1>
-  <p>Two convenient locations serving the Niagara Region and Hamilton area. Get a free quote for tent rentals, chair rentals, table rentals, sales and full event equipment packages.</p>
+  <p>Fill in the form below and we'll reply with a free quote — usually within a few hours during business hours. Or call us directly at 905-334-0091.</p>
 </div>
 
-<section>
-  <div class="section-inner">
+<!-- CONTACT FORM -->
+<section class="contact-form-section">
+  <div class="form-card">
+    <h2>Send Us a <span>Message</span></h2>
+    <div class="form-divider"></div>
+    <p>Tell us about your event and we'll get back to you with a free quote — usually within a few hours during business hours.</p>
 
+    <!-- FORMSPREE FORM — emails go directly to sales@fabhospitality.ca -->
+    <form id="contact-form" action="https://formspree.io/f/mqerbvge" method="POST">
+      <input type="hidden" name="_subject" value="New Quote Request from fabhospitality.ca">
+      <input type="hidden" name="_next" value="https://fabhospitality.ca/contact.html?sent=true">
+      <input type="text" name="_gotcha" style="display:none">
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="name">Your Name *</label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="Full name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone Number *</label>
+          <input class="form-input" type="tel" id="phone" name="phone" placeholder="905-XXX-XXXX" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="event-date">Event Date</label>
+          <input class="form-input" type="date" id="event-date" name="event_date">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="location">Event City / Location</label>
+          <input class="form-input" type="text" id="location" name="event_location" placeholder="e.g. Burlington, Hamilton, Grimsby...">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="items">Items Needed</label>
+          <select class="form-select" id="items" name="items_needed">
+            <option value="">Select main item...</option>
+            <optgroup label="🏕️ Tent Rentals">
+              <option>10×20 Tent Rental — $350</option>
+              <option>20×20 Tent Rental — $450</option>
+              <option>20×30 Tent Rental — $550</option>
+              <option>20×40 Tent Rental — $750</option>
+              <option>20×60 Tent Rental — $1,150</option>
+            </optgroup>
+            <optgroup label="🛒 Tents for Sale">
+              <option>10×20 Tent for Sale — $2,999</option>
+              <option>20×20 Tent for Sale — $3,999</option>
+              <option>20×30 Tent for Sale — $5,499</option>
+              <option>20×40 Tent for Sale — $6,499</option>
+              <option>40×40 Tent for Sale — $14,999</option>
+              <option>30×60 Tent for Sale — $16,999</option>
+              <option>40×40 Clear Center — $18,999</option>
+              <option>30×60 Clear Center — $21,999</option>
+            </optgroup>
+            <optgroup label="🪑 Chair Rentals">
+              <option>Standard Folding Chair — $1.95/each</option>
+              <option>Wedding White Chair — $2.50/each</option>
+              <option>Resin Padded Chair — $3.99/each</option>
+              <option>Folding Bar Stool — $10.95/each</option>
+            </optgroup>
+            <optgroup label="🍽️ Table Rentals">
+              <option>Rectangle Table 6ft — $10.95</option>
+              <option>Rectangle Table 8ft — $16.95</option>
+              <option>Round Table 60" — $16.95</option>
+              <option>Cocktail Table — $12.95</option>
+            </optgroup>
+            <optgroup label="✨ Other Rentals">
+              <option>Dance Floor Rental</option>
+              <option>Linen / Tablecloths</option>
+              <option>Glassware</option>
+              <option>Heaters</option>
+              <option>Portable Bar</option>
+            </optgroup>
+            <option value="Full Event Package">Full Event Package</option>
+            <option value="Multiple Items">Multiple Items / Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="details">Additional Details</label>
+          <textarea class="form-textarea" id="details" name="additional_details" placeholder="Tell us more — guest count, venue type, any special requirements..."></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">
+        <span id="btn-text">📩 Send Message</span>
+        <span id="btn-loading" style="display:none;">⏳ Sending...</span>
+      </button>
+
+      <div class="success-banner" id="success-banner">
+        ✅ Thank you! Your message has been sent to sales@fabhospitality.ca — we'll get back to you within a few hours!
+      </div>
+      <div class="error-banner" id="error-banner">
+        ⚠️ Something went wrong. Please try again or call us directly at <a href="tel:9053340091">905-334-0091</a>.
+      </div>
+    </form>
+
+    <div class="or-divider"><span>or contact us directly</span></div>
+    <a href="tel:9053340091" class="call-btn">📞 Call 905-334-0091</a>
+  </div>
+</section>
+
+<!-- TWO LOCATIONS -->
+<section style="padding:60px 24px;background:white;">
+  <div class="section-inner">
     <div class="section-title">Our <span>Two Locations</span></div>
     <div class="divider"></div>
-
     <div class="location-hero">
 
-      <!-- LOCATION 1: BEAMSVILLE -->
       <div class="loc-card">
-        <div class="loc-card-header">
-          <p>📍 Location 1 — Niagara Region</p>
-          <h3>Fab Party &amp; Event Rentals and Tent Sales</h3>
+        <div class="loc-card-head">
+          <h3>📍 Location 1 — Niagara Region</h3>
+          <p>Fab Party &amp; Event Rentals and Tent Sales</p>
         </div>
-        <div class="loc-card-body">
-          <div class="loc-detail">
-            <span class="icon">🏠</span>
-            <div>
-              <strong>Address</strong><br>
-              4006 Bush Crescent<br>
-              Beamsville, ON &nbsp;L0R 1B7<br>
-              <em style="font-size:13px;color:var(--text-light);">Regional Municipality of Niagara</em>
-            </div>
-          </div>
-          <div class="loc-detail">
-            <span class="icon">📱</span>
-            <div><strong>Phone</strong><br><a href="tel:9053340091">905-334-0091</a></div>
-          </div>
-          <div class="loc-detail">
-            <span class="icon">✉️</span>
-            <div><strong>Email</strong><br><a href="mailto:sales@fabhospitality.ca">sales@fabhospitality.ca</a></div>
-          </div>
-          <div class="loc-detail">
-            <span class="icon">🕐</span>
-            <div>
-              <strong>Hours</strong><br>
-              Mon–Fri: 8:00 am – 4:00 pm<br>
-              Sat &amp; Sun: Closed
-            </div>
-          </div>
-          <div class="loc-detail">
-            <span class="icon">🗺️</span>
-            <div><strong>Serving:</strong> Beamsville, Lincoln, Grimsby, St. Catharines, Niagara Falls, Niagara-on-the-Lake &amp; surrounding areas</div>
-          </div>
-          <div style="margin-top:16px;">
-            <a href="https://business.google.com/n/10082128764811494206/searchprofile?hl=en" target="_blank" class="btn" style="font-size:12px;padding:10px 20px;">View on Google Maps</a>
-          </div>
-          <div style="margin-top:16px;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2908!2d-79.4778!3d43.1594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d350c2e8b6b8b5%3A0x1!2s4006+Bush+Cres%2C+Beamsville%2C+ON+L0R+1B7!5e0!3m2!1sen!2sca!4v1" width="100%" height="220" style="border:0;border-radius:4px;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
+        <a href="tel:9053340091" class="contact-row">
+          <span class="c-icon">📱</span><div><div class="c-label">Phone</div><div class="c-val">905-334-0091</div></div>
+        </a>
+        <div class="contact-row">
+          <span class="c-icon">🏠</span><div><div class="c-label">Address</div><div class="c-val">4006 Bush Cres, Beamsville, ON L0R 1B7</div></div>
+        </div>
+        <div class="contact-row">
+          <span class="c-icon">🕐</span><div><div class="c-label">Hours</div><div class="c-val">Mon–Fri: 8am – 4pm &nbsp;|&nbsp; Sat &amp; Sun: Closed</div></div>
+        </div>
+        <a href="https://maps.google.com/?q=4006+Bush+Cres+Beamsville+ON" target="_blank" class="contact-row">
+          <span class="c-icon">🗺️</span><div><div class="c-label">Directions</div><div class="c-val" style="color:var(--gold);">Open in Google Maps →</div></div>
+        </a>
+        <div style="padding:12px 20px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2908!2d-79.4778!3d43.1594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d350c2e8b6b8b5%3A0x1!2s4006+Bush+Cres%2C+Beamsville%2C+ON!5e0!3m2!1sen!2sca!4v1" width="100%" height="200" style="border:0;border-radius:6px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
 
-      <!-- LOCATION 2: STONEY CREEK -->
       <div class="loc-card">
-        <div class="loc-card-header">
-          <p>📍 Location 2 — Hamilton Area</p>
-          <h3>Fab Hospitality Party &amp; Events Rental and Sales</h3>
+        <div class="loc-card-head">
+          <h3>📍 Location 2 — Hamilton Area</h3>
+          <p>Fab Hospitality Party &amp; Events Rental and Sales</p>
         </div>
-        <div class="loc-card-body">
-          <div class="loc-detail">
-            <span class="icon">🏠</span>
-            <div>
-              <strong>Address</strong><br>
-              365 Fruitland Road<br>
-              Stoney Creek (Hamilton), ON &nbsp;L8E 0E9
-            </div>
-          </div>
-          <div class="loc-detail">
-            <span class="icon">📱</span>
-            <div><strong>Phone</strong><br><a href="tel:9053340091">905-334-0091</a></div>
-          </div>
-          <div class="loc-detail">
-            <span class="icon">✉️</span>
-            <div><strong>Email</strong><br><a href="mailto:sales@fabhospitality.ca">sales@fabhospitality.ca</a></div>
-          </div>
-          <div class="loc-detail">
-            <span class="icon">🕐</span>
-            <div>
-              <strong>Hours</strong><br>
-              Mon–Fri: 8:00 am – 4:00 pm<br>
-              Sat &amp; Sun: Closed
-            </div>
-          </div>
-          <div class="loc-detail">
-            <span class="icon">🗺️</span>
-            <div><strong>Serving:</strong> Stoney Creek, Hamilton, Burlington, Oakville, Ancaster, Dundas &amp; surrounding areas</div>
-          </div>
-          <div style="margin-top:16px;">
-            <a href="https://business.google.com/n/8284103633065189184/searchprofile?hl=en" target="_blank" class="btn" style="font-size:12px;padding:10px 20px;">View on Google Maps</a>
-          </div>
-          <div style="margin-top:16px;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907!2d-79.7020!3d43.2264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ca3936fc3657d%3A0x42fd3ad6764cab0e!2s365+Fruitland+Rd%2C+Stoney+Creek%2C+ON+L8E+0E9!5e0!3m2!1sen!2sca!4v1" width="100%" height="220" style="border:0;border-radius:4px;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
+        <a href="tel:9053340091" class="contact-row">
+          <span class="c-icon">📱</span><div><div class="c-label">Phone</div><div class="c-val">905-334-0091</div></div>
+        </a>
+        <div class="contact-row">
+          <span class="c-icon">🏠</span><div><div class="c-label">Address</div><div class="c-val">365 Fruitland Rd, Stoney Creek, ON L8E 0E9</div></div>
+        </div>
+        <div class="contact-row">
+          <span class="c-icon">🕐</span><div><div class="c-label">Hours</div><div class="c-val">Mon–Fri: 8am – 4pm &nbsp;|&nbsp; Sat &amp; Sun: Closed</div></div>
+        </div>
+        <a href="https://maps.google.com/?q=365+Fruitland+Rd+Stoney+Creek+ON" target="_blank" class="contact-row">
+          <span class="c-icon">🗺️</span><div><div class="c-label">Directions</div><div class="c-val" style="color:var(--gold);">Open in Google Maps →</div></div>
+        </a>
+        <div style="padding:12px 20px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907!2d-79.7020!3d43.2264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ca3936fc3657d%3A0x42fd3ad6764cab0e!2s365+Fruitland+Rd%2C+Stoney+Creek%2C+ON!5e0!3m2!1sen!2sca!4v1" width="100%" height="200" style="border:0;border-radius:6px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
 
     </div>
 
-    <!-- CONTACT FORM AREA -->
-    <div style="margin-top:56px;background:var(--off-white);padding:40px;border-radius:6px;">
-      <div class="section-title" style="font-size:26px;">Send Us a <span>Message</span></div>
-      <div class="divider"></div>
-      <p style="margin-bottom:28px;color:var(--text-light);font-size:15px;">Tell us about your event and we'll get back to you with a free quote — usually within a few hours during business hours.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;">
-        <div>
-          <label style="display:block;font-weight:700;margin-bottom:6px;font-size:14px;">Your Name</label>
-          <input type="text" placeholder="Full name" style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:3px;font-size:15px;font-family:inherit;">
+    <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div style="background:var(--off-white);padding:24px;border-radius:8px;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:18px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gold);">Follow Us</h3>
+        <div class="contact-row" style="padding:10px 0;">
+          <span class="c-icon">📘</span><div><a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank" style="color:var(--gold);font-weight:700;">Facebook — FABHOSPITALITYCANADA</a></div>
         </div>
-        <div>
-          <label style="display:block;font-weight:700;margin-bottom:6px;font-size:14px;">Phone Number</label>
-          <input type="tel" placeholder="Your phone number" style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:3px;font-size:15px;font-family:inherit;">
+        <div class="contact-row" style="padding:10px 0;">
+          <span class="c-icon">📸</span><div><a href="https://www.instagram.com/fabhospitalityca/" target="_blank" style="color:var(--gold);font-weight:700;">Instagram — @fabhospitalityca</a></div>
         </div>
-        <div>
-          <label style="display:block;font-weight:700;margin-bottom:6px;font-size:14px;">Email Address</label>
-          <input type="email" placeholder="your@email.com" style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:3px;font-size:15px;font-family:inherit;">
-        </div>
-        <div>
-          <label style="display:block;font-weight:700;margin-bottom:6px;font-size:14px;">Event Date</label>
-          <input type="date" style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:3px;font-size:15px;font-family:inherit;">
-        </div>
-        <div>
-          <label style="display:block;font-weight:700;margin-bottom:6px;font-size:14px;">Event Location / City</label>
-          <input type="text" placeholder="e.g. Burlington, Hamilton, Grimsby..." style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:3px;font-size:15px;font-family:inherit;">
-        </div>
-        <div>
-          <label style="display:block;font-weight:700;margin-bottom:6px;font-size:14px;">Items Needed</label>
-          <input type="text" placeholder="e.g. 20x30 tent, 50 chairs, 10 tables..." style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:3px;font-size:15px;font-family:inherit;">
-        </div>
-        <div style="grid-column:1/-1;">
-          <label style="display:block;font-weight:700;margin-bottom:6px;font-size:14px;">Additional Details</label>
-          <textarea placeholder="Tell us more about your event — guest count, venue type, any special requirements..." style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:3px;font-size:15px;font-family:inherit;height:120px;resize:vertical;"></textarea>
-        </div>
-        <div style="grid-column:1/-1;">
-          <a href="mailto:sales@fabhospitality.ca" class="btn" style="font-size:15px;padding:16px 40px;">📧 Send to sales@fabhospitality.ca</a>
-          <span style="margin-left:20px;font-size:14px;color:var(--text-light);">or call <a href="tel:9053340091" style="color:var(--gold);font-weight:700;">905-334-0091</a></span>
+        <div class="contact-row" style="padding:10px 0;">
+          <span class="c-icon">▶️</span><div><a href="https://www.youtube.com/channel/UCsnvIa-AZ7nOY5T2l_3K6-Q" target="_blank" style="color:var(--gold);font-weight:700;">YouTube — Fab Hospitality</a></div>
         </div>
       </div>
-      <p style="margin-top:20px;font-size:13px;color:var(--text-light);">💡 Tip: Click the button above to open your email app with our address pre-filled. Copy your details from the form into the email.</p>
-    </div>
-
-    <!-- SOCIAL + QUICK LINKS -->
-    <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:32px;">
-      <div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--gold);">Follow Us</h3>
-        <div class="contact-item"><span class="icon">📘</span><div><a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank"><strong>Facebook</strong> — FABHOSPITALITYCANADA</a></div></div>
-        <div class="contact-item"><span class="icon">📸</span><div><a href="https://www.instagram.com/fabhospitalityca/" target="_blank"><strong>Instagram</strong> — @fabhospitalityca</a></div></div>
-        <div class="contact-item"><span class="icon">▶</span><div><a href="https://www.youtube.com/channel/UCsnvIa-AZ7nOY5T2l_3K6-Q" target="_blank"><strong>YouTube</strong> — Fab Hospitality Channel</a></div></div>
-      </div>
-      <div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--gold);">Areas We Serve</h3>
-        <div class="areas">
+      <div style="background:var(--off-white);padding:24px;border-radius:8px;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:18px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gold);">Areas We Serve</h3>
+        <div class="areas" style="margin-top:8px;">
           <div class="area-tag">Beamsville</div><div class="area-tag">Stoney Creek</div>
           <div class="area-tag">Hamilton</div><div class="area-tag">Burlington</div>
           <div class="area-tag">Grimsby</div><div class="area-tag">St. Catharines</div>
@@ -295,36 +313,76 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
 <div class="cta-banner">
   <h2>Ready to Get a Quote?</h2>
-  <p>Call or email us today — two locations serving all of Niagara &amp; Hamilton!</p>
+  <p>Fill in the form above or call us — two locations serving all of Niagara &amp; Hamilton!</p>
   <a href="tel:9053340091" class="btn">📞 Call 905-334-0091</a>
   <a href="mailto:sales@fabhospitality.ca" class="btn btn-outline" style="margin-left:12px;">✉️ Email Us</a>
 </div>
 
 <footer>
   <div class="footer-logo">Fab Hospitality</div>
-  <p>© 2024 Fab Hospitality &nbsp;|&nbsp; High Peak Marquee Tent Rentals &amp; Sales | Party &amp; Event Equipment</p>
-  <p style="margin-top:6px;color:rgba(255,255,255,0.5);font-size:13px;">
-    📍 Beamsville: 4006 Bush Cres, ON L0R 1B7 &nbsp;|&nbsp; 📍 Stoney Creek: 365 Fruitland Rd, ON L8E 0E9
-  </p>
-  <p style="margin-top:8px;">
-    <a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank">Facebook</a> &nbsp;•&nbsp;
-    <a href="https://www.instagram.com/fabhospitalityca/" target="_blank">Instagram</a> &nbsp;•&nbsp;
-    <a href="https://www.youtube.com/channel/UCsnvIa-AZ7nOY5T2l_3K6-Q" target="_blank">YouTube</a>
-  </p>
+  <p>© 2024 Fab Hospitality &nbsp;|&nbsp; High Peak Marquee Tent Rentals &amp; Sales</p>
+  <p style="margin-top:6px;color:rgba(255,255,255,0.5);font-size:13px;">📍 Beamsville: 4006 Bush Cres, ON L0R 1B7 &nbsp;|&nbsp; 📍 Stoney Creek: 365 Fruitland Rd, ON L8E 0E9</p>
+  <p style="margin-top:8px;"><a href="https://www.facebook.com/FABHOSPITALITYCANADA/" target="_blank">Facebook</a> &nbsp;•&nbsp; <a href="https://www.instagram.com/fabhospitalityca/" target="_blank">Instagram</a></p>
 </footer>
+
 <script>
+// Nav mobile toggle
 document.querySelectorAll('.nav-item > a').forEach(link => {
   link.addEventListener('click', function(e) {
     const dd = this.nextElementSibling;
     if (dd && window.innerWidth <= 900) { e.preventDefault(); dd.style.display = dd.style.display==='block'?'none':'block'; }
   });
 });
-document.querySelectorAll('nav a').forEach(a => { if(a.href===window.location.href) a.classList.add('active'); });
+
+// Check for success redirect
+if (window.location.search.includes('sent=true')) {
+  document.getElementById('success-banner').style.display = 'block';
+  window.scrollTo(0, document.getElementById('contact-form').offsetTop - 100);
+}
+
+// Form submission via fetch (AJAX — no page reload)
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const btnLoading = document.getElementById('btn-loading');
+  const success = document.getElementById('success-banner');
+  const error = document.getElementById('error-banner');
+
+  // Show loading state
+  btn.disabled = true;
+  btnText.style.display = 'none';
+  btnLoading.style.display = 'inline';
+  success.style.display = 'none';
+  error.style.display = 'none';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      success.style.display = 'block';
+      form.reset();
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      error.style.display = 'block';
+    }
+  } catch (err) {
+    error.style.display = 'block';
+  }
+
+  btn.disabled = false;
+  btnText.style.display = 'inline';
+  btnLoading.style.display = 'none';
+});
 </script>
 </body></html>
